@@ -14,7 +14,8 @@ dependencies {
     compile(project(":spring-core"))
     compile(project(":spring-context"))
     compile(project(":spring-expression"))
+    compile(project(":spring-instrument"))
     testCompile group: 'junit', name: 'junit', version: '4.12'
-    compile group: 'commons-logging', name: 'commons-logging', version: '1.0.4'
+    compile group: 'commons-logging', name: 'commons-logging', version: '1.2'
 
 }
