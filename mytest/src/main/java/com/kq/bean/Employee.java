@@ -1,14 +1,17 @@
 package com.kq.bean;
 
+import javax.validation.constraints.Size;
+
 /**
  * Employee
- *
  * @author kq
  * @date 2018-12-26
  */
 public class Employee {
 
 	private String id;
+
+	@Size(max = 16,message = "名称")
 	private String name;
 
 	public String getId() {

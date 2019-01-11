@@ -24,6 +24,9 @@ dependencies {
     compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.21'
     // https://mvnrepository.com/artifact/org.slf4j/jul-to-slf4j
     compile group: 'org.slf4j', name: 'jul-to-slf4j', version: '1.7.21'
+    // https://mvnrepository.com/artifact/org.hibernate/hibernate-validator
+    compile group: 'org.hibernate', name: 'hibernate-validator', version: '5.2.5.Final'
+
 
     //    compile group: 'org.slf4j', name: 'slf4j-log4j12', version: '1.7.21'
 }
