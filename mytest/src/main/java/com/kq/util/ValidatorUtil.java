@@ -46,8 +46,9 @@ public class ValidatorUtil {
 
 	public static void main(String args[]) {
 		Employee e = new Employee();
-		e.setName("自提地址！！###！！啊啊啊啊啊");
-		ValidatorUtil.validate(e);
+		e.setName("自提地址！！###！！啊啊啊啊啊 啊啊啊啊啊");
+		Map<String, StringBuilder> result = ValidatorUtil.validate(e);
+		System.out.println("-----------------------result="+result);
 
 	}
 

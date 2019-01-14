@@ -26,6 +26,9 @@ dependencies {
     compile group: 'org.slf4j', name: 'jul-to-slf4j', version: '1.7.21'
     // https://mvnrepository.com/artifact/org.hibernate/hibernate-validator
     compile group: 'org.hibernate', name: 'hibernate-validator', version: '5.2.5.Final'
+    // https://mvnrepository.com/artifact/org.glassfish/javax.el
+    compile group: 'org.glassfish', name: 'javax.el', version: '3.0.1-b08'
+
 
 
     //    compile group: 'org.slf4j', name: 'slf4j-log4j12', version: '1.7.21'

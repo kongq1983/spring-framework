@@ -514,16 +514,20 @@ public abstract class AbstractApplicationContext extends DefaultResourceLoader
 	public void refresh() throws BeansException, IllegalStateException {
 		synchronized (this.startupShutdownMonitor) {
 			// Prepare this context for refreshing.
+			//设置开始时间、关闭状态未false、活动状态未true
 			prepareRefresh();
 
 			// Tell the subclass to refresh the internal bean factory.
+			//返回 org.springframework.beans.factory.support.DefaultListableBeanFactory
 			ConfigurableListableBeanFactory beanFactory = obtainFreshBeanFactory();
 
 			// Prepare the bean factory for use in this context.
+			// Configure the factory's standard context characteristics
 			prepareBeanFactory(beanFactory);
 
 			try {
 				// Allows post-processing of the bean factory in context subclasses.
+				//空方法   子类自己去实现
 				postProcessBeanFactory(beanFactory);
 
 				// Invoke factory processors registered as beans in the context.
@@ -576,12 +580,16 @@ public abstract class AbstractApplicationContext extends DefaultResourceLoader
 	}
 
 	/**
+	 * 设置开始时间、关闭状态未false、活动状态未true
 	 * Prepare this context for refreshing, setting its startup date and
 	 * active flag as well as performing any initialization of property sources.
 	 */
 	protected void prepareRefresh() {
+		//开始时间
 		this.startupDate = System.currentTimeMillis();
+		//关闭状态为false
 		this.closed.set(false);
+		//活动状态 为true
 		this.active.set(true);
 
 		if (logger.isInfoEnabled()) {
@@ -589,6 +597,7 @@ public abstract class AbstractApplicationContext extends DefaultResourceLoader
 		}
 
 		// Initialize any placeholder property sources in the context environment
+		/// For subclasses: do nothing by default.  空方法  子类自己实现
 		initPropertySources();
 
 		// Validate that all properties marked as required are resolvable
@@ -603,15 +612,16 @@ public abstract class AbstractApplicationContext extends DefaultResourceLoader
 	/**
 	 * <p>Replace any stub property sources with actual instances.
 	 * @see org.springframework.core.env.PropertySource.StubPropertySource
-	 * @see org.springframework.web.context.support.WebApplicationContextUtils#initServletPropertySources
+	 *
 	 */
+	//@see org.springframework.web.context.support.WebApplicationContextUtils#initServletPropertySources
 	protected void initPropertySources() {
 		// For subclasses: do nothing by default.
 	}
 
 	/**
 	 * Tell the subclass to refresh the internal bean factory.
-	 * @return the fresh BeanFactory instance
+	 * @return the fresh BeanFactory instance    DefaultListableBeanFactory
 	 * @see #refreshBeanFactory()
 	 * @see #getBeanFactory()
 	 */
@@ -1057,6 +1067,7 @@ public abstract class AbstractApplicationContext extends DefaultResourceLoader
 	}
 
 	/**
+	 * 判断状态active不是true，则抛异常   容器已经关闭了
 	 * Assert that this context's BeanFactory is currently active,
 	 * throwing an {@link IllegalStateException} if it isn't.
 	 * <p>Invoked by all {@link BeanFactory} delegation methods that depend
