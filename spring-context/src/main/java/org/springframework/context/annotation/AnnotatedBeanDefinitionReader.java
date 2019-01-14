@@ -124,6 +124,7 @@ public class AnnotatedBeanDefinitionReader {
 
 
 	/**
+	 * 注册@Configuration
 	 * Register one or more annotated classes to be processed.
 	 * <p>Calls to {@code register} are idempotent; adding the same
 	 * annotated class more than once has no additional effect.
@@ -137,6 +138,7 @@ public class AnnotatedBeanDefinitionReader {
 	}
 
 	/**
+	 * 注册@Configuration
 	 * Register a bean from the given bean class, deriving its metadata from
 	 * class-declared annotations.
 	 * @param annotatedClass the class of the bean
@@ -198,6 +200,7 @@ public class AnnotatedBeanDefinitionReader {
 	}
 
 	/**
+	 * 注册@Configuration
 	 * Register a bean from the given bean class, deriving its metadata from
 	 * class-declared annotations.
 	 * @param annotatedClass the class of the bean
