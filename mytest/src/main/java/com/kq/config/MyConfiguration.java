@@ -1,6 +1,7 @@
 package com.kq.config;
 
 import com.kq.bean.Employee;
+import com.kq.beanpostprocessor.MyBeanPostProcessor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -23,5 +24,10 @@ public class MyConfiguration {
 		return e;
 	}
 
+	@Bean
+	public MyBeanPostProcessor getMyBeanPostProcessor(){
+		MyBeanPostProcessor p = new MyBeanPostProcessor();
+		return p;
+	}
 
 }
